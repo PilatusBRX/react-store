@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { ProductConsumer } from '../context/context';
+import { ProductConsumer } from '../context';
 
 export default function Footer() {
   return (
@@ -12,8 +12,8 @@ export default function Footer() {
               <div className='row'>
                 <div className='col-md-6'>
                   <p className='text-capitalize'>
-                    copyright &copy; tech store {new Date().getFullYear()}. all
-                    rights reserved{' '}
+                    copyright &copy; tech store {new Date().getFullYear()}.
+                    Todos os direitos reservados{' '}
                   </p>
                 </div>
                 <div className='col-md-6 d-flex justify-content-around'>

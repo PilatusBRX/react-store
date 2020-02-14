@@ -1,27 +1,27 @@
 export const linkData = [
   {
     id: 1,
-    text: "home",
-    path: "/"
+    text: 'Início',
+    path: '/'
   },
   {
     id: 2,
-    text: "about",
-    path: "/about"
+    text: 'sobre a empresa',
+    path: '/sobre-a-empresa'
   },
   {
     id: 3,
-    text: "products",
-    path: "/products"
+    text: 'produtos',
+    path: '/produtos'
   },
   {
     id: 4,
-    text: "contact",
-    path: "/contact"
+    text: 'contato',
+    path: '/contato'
   },
   {
     id: 5,
-    text: "cart",
-    path: "/cart"
+    text: 'carrinho',
+    path: '/carrinho'
   }
 ];

@@ -1,7 +1,7 @@
-@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans");
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap');
 
 :root {
-  --primaryColor: #5fb7ea;
+  --primaryColor: #e9bc06;
   --primaryRGBA: rgba(0, 0, 0, 0.3);
   --mainGrey: #fafafa;
   --darkGrey: #5f5e5e;
@@ -11,19 +11,34 @@
   --mainSpacing: 0.3rem;
 }
 
+/* :root {
+  --primaryColor: #5fb7ea;
+  --primaryRGBA: rgba(0, 0, 0, 0.3);
+  --mainGrey: #fafafa;
+  --darkGrey: #5f5e5e;
+  --mainWhite: #fff;
+  --mainBlack: #222;
+  --mainTransition: all 0.2s ease-in-out;
+  --mainSpacing: 0.3rem;
+} */
+
 .text-title {
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
   letter-spacing: var(--mainSpacing);
-  text-transform: capitalize;
+  /* text-transform: capitalize; */
 }
 
 .text-main {
-  color: var(--primaryColor);
+  color: #575555;
+  font-size: 18px;
+  font-weight: bold;
+
 }
 
 body {
-  font-family: "Open Sans", sans-serif !important;
+  overflow-x: hidden;
+  font-family: 'Roboto', sans-serif;
   background: var(--mainGrey) !important;
   color: var(--mainBlack);
 }
@@ -44,7 +59,7 @@ body {
 .main-link:hover {
   background: var(--darkGrey);
   text-decoration: none;
-  color: var(--primaryColor);
+  color: var(--mainWhite);
   outline-color: var(--darkGrey);
   outline-offset: 8px;
 }

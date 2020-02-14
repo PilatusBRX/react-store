@@ -1,8 +1,8 @@
 import React from 'react';
 import { FaBars, FaCartPlus } from 'react-icons/fa';
 import styled from 'styled-components';
-import { ProductConsumer } from '../context/context';
-import logo from '../images/logo.svg';
+import { ProductConsumer } from '../context';
+import logo from '../images/logo.png';
 export default function Navbar() {
   return (
     <ProductConsumer>
@@ -12,7 +12,7 @@ export default function Navbar() {
           <NavWrapper>
             <div className='nav-center'>
               <FaBars className='nav-icon' onClick={handleSidebar} />
-              <img src={logo} alt='tech store logo' />
+              <img src={logo} alt='tech store logo' className='logo' />
               <div className='nav-cart'>
                 <FaCartPlus className='nav-icon' onClick={handleCart} />
                 <div className='cart-items'>{cartItems}</div>
@@ -30,7 +30,7 @@ const NavWrapper = styled.nav`
   position: sticky;
   top: 0;
   width: 100%;
-  padding: 1rem 1.5rem;
+  padding: 0.23rem 1.5rem;
   background: var(--mainGrey);
   border-bottom: 3px solid var(--primaryColor);
   z-index: 1;
@@ -57,5 +57,11 @@ const NavWrapper = styled.nav`
     right: -8px;
     padding: 0 5px;
     border-radius: 50%;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .logo {
+      max-width: 200px;
+    }
   }
 `;

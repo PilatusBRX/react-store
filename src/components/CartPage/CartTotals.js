@@ -1,7 +1,9 @@
 import React from 'react';
-import { ProductConsumer } from '../../context/context';
+import { formatPrice } from '../../context/formatPrice';
+import { ProductConsumer } from '../../context';
+import PayPalBtn from './PayPalBtn';
 
-const CartTotals = () => {
+const CartTotals = ({ history }) => {
   return (
     <div className='container'>
       <div className='row'>
@@ -14,16 +16,16 @@ const CartTotals = () => {
                   className='btn btn-outline-danger text-capitalize mb-4'
                   onClick={clearCart}
                 >
-                  clear cart
+                  esvaziar carrinho
                 </button>
-                <h3>subtotal: ${cartSubTotal}</h3>
-                <h3>tax: ${cartTax}</h3>
-                <h3>total: ${cartTotal}</h3>
-                {/* <PayPalBtn
+                <h3>subtotal: {formatPrice(cartSubTotal)}</h3>
+                <h3>taxa: {formatPrice(cartTax)}</h3>
+                <h3>total: {formatPrice(cartTotal)}</h3>
+                <PayPalBtn
                   history={history}
                   cartTotal={cartTotal}
                   clearCart={clearCart}
-                ></PayPalBtn> */}
+                />
               </div>
             );
           }}

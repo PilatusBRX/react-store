@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import Home from './pages/HomePage';
 import About from './pages/AboutPage';
 import Products from './pages/ProductsPage';
@@ -24,11 +26,11 @@ class App extends Component {
         <SideCart />
         <Switch>
           <Route path='/' exact component={Home} />
-          <Route path='/about' component={About} />
-          <Route path='/contact' component={Contact} />
-          <Route path='/products' exact component={Products} />
-          <Route path='/products/:id' component={SingleProduct} />
-          <Route path='/cart' component={Cart} />
+          <Route path='/sobre-a-empresa' component={About} />
+          <Route path='/contato' component={Contact} />
+          <Route path='/produtos' exact component={Products} />
+          <Route path='/produtos/:id' component={SingleProduct} />
+          <Route path='/carrinho' component={Cart} />
           <Route component={Default} />
         </Switch>
         <Footer />

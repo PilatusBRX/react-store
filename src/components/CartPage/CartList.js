@@ -1,6 +1,6 @@
 import React from 'react';
 import CartItem from './CartItem';
-import { ProductConsumer } from '../../context/context';
+import { ProductConsumer } from '../../context';
 const CartList = () => {
   return (
     <div className='container-fluid'>
@@ -12,7 +12,7 @@ const CartList = () => {
               if (cart.length === 0) {
                 return (
                   <h1 className='text-title text-center my-4'>
-                    your cart is currently empty.
+                    seu carrinho está vazio.
                   </h1>
                 );
               }

@@ -2,7 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { FaSearch, FaCartPlus } from 'react-icons/fa';
-import { ProductConsumer } from '../context/context';
+import { ProductConsumer } from '../context';
+import { formatPrice } from '../context/formatPrice';
 
 export default function Product({ product }) {
   return (
@@ -21,7 +22,7 @@ export default function Product({ product }) {
                 />
                 <div className='product-icons'>
                   <Link
-                    to={`/products/${product.id}`}
+                    to={`/produtos/${product.id}`}
                     onClick={() => setSingleProduct(product.id)}
                   >
                     <FaSearch className='icon' />
@@ -34,7 +35,7 @@ export default function Product({ product }) {
               </div>
               <div className='card-body d-flex justify-content-between'>
                 <p className='mb-0'>{product.title}</p>
-                <p className='mb-0 text-main'>${product.price}</p>
+                <p className='mb-0 text-main'> {formatPrice(product.price)}</p>
               </div>
             </div>
           </ProductWrapper>
@@ -77,7 +78,7 @@ const ProductWrapper = styled.div`
     margin: 1rem;
     padding: 0.5rem;
     color: var(--primaryColor);
-    background: var(--mainBlack);
+    background: rgba(0, 0, 0, 0.45);
     border-radius: 0.5rem;
   }
   .card:hover .product-icons {
@@ -86,6 +87,6 @@ const ProductWrapper = styled.div`
   .card-body {
     font-weight: bold;
     letter-spacing: 2px;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
   }
 `;

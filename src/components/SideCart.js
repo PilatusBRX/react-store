@@ -1,7 +1,8 @@
 import React from 'react';
-import { ProductConsumer } from '../context/context';
+import { ProductConsumer } from '../context';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { formatPrice } from '../context/formatPrice';
 export default function SideCart() {
   return (
     <ProductConsumer>
@@ -15,19 +16,22 @@ export default function SideCart() {
                   <li key={item.id} className='cart-item mb-4'>
                     <img width='35' src={item.image} alt='cart item' />
                     <div className='mt-3'>
+                      <h6 className='text-uppercase'>
+                        {formatPrice(item.price)}
+                      </h6>
                       <h6 className='text-uppercase'>{item.title}</h6>
                       <h6 className='text-title text-capitalize'>
-                        amount: {item.count}
+                        Quantidade: {item.count}
                       </h6>
                     </div>
                   </li>
                 );
               })}
             </ul>
-            <h4 className='text-capitalize'>cart total: ${cartTotal}</h4>
+            <h4 className='text-capitalize'>Total: {formatPrice(cartTotal)}</h4>
             <div className='text-center my-5'>
-              <Link to='/cart' className='main-link'>
-                cart page
+              <Link to='/carrinho' className='main-link cart-link-page'>
+                Página do carrinho
               </Link>
             </div>
           </CartWrapper>
@@ -58,5 +62,10 @@ const CartWrapper = styled.div`
   }
   .cart-item {
     list-style-type: none;
+  }
+
+  .cart-link-page {
+    font-size: 12px;
+    padding: 0.5rem 0.5rem;
   }
 `;

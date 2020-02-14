@@ -2,7 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Hero from '../components/Hero';
 import singleProductBackground from '../images/singleProductBcg.jpeg';
-import { ProductConsumer } from '../context/context';
+import { ProductConsumer } from '../context';
+import { formatPrice } from '../context/formatPrice';
 
 const SingleProductPage = () => {
   return (
@@ -13,7 +14,7 @@ const SingleProductPage = () => {
           const { singleProduct, addToCart, loading } = value;
           if (loading) {
             console.log('Hello from loading hell');
-            return <h1>product loading...</h1>;
+            return <h1>Carregando produtos...</h1>;
           }
           const {
             company,
@@ -29,22 +30,23 @@ const SingleProductPage = () => {
                 <div className='row'>
                   <div className='col-10 mx-auto col-sm-8 col-md-6 my-3'>
                     <img
-                      src={`../${image}`} // está ssim por causo do Contentful
+                      // src={`../${image}`}
+                      src={image}
                       alt='single product'
                       className='img-fluid'
                     />
                   </div>
 
                   <div className='col-10 mx-auto col-sm-8 col-md-6 my-3'>
-                    <h5 className='text-title mb-4'>model :{title} </h5>
+                    <h5 className='text-title mb-4'>Modelo :{title} </h5>
                     <h5 className='text-capitalize text-muted mb-4'>
-                      company : {company}
+                      categoria : {company}
                     </h5>
                     <h5 className='text-main text-capitalize mb-4'>
-                      price : ${price}
+                      preço : {formatPrice(price)}
                     </h5>
                     <p className='text-capitalize text-title mt-3'>
-                      some info about product :
+                      Informações sobre o produto :
                     </p>
                     <p>{description}</p>
                     <button
@@ -53,14 +55,14 @@ const SingleProductPage = () => {
                       style={{ margin: '0.75rem' }}
                       onClick={() => addToCart(id)}
                     >
-                      add to cart
+                      adicionar ao carrinho
                     </button>
                     <Link
-                      to='/products'
+                      to='/produtos'
                       className='main-link'
                       style={{ margin: '0.75rem' }}
                     >
-                      back to products
+                      Voltar aos produtos
                     </Link>
                   </div>
                 </div>

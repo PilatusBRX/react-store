@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { ProductConsumer } from '../context/context';
+import { ProductConsumer } from '../context';
 export default function Sidebar() {
   return (
     <ProductConsumer>
@@ -37,7 +37,7 @@ const SideWrapper = styled.nav`
   left: 0;
   width: 100%;
   height: 100%;
-  background: var(--mainGrey);
+  background: var(--darkGrey);
   z-index: 1;
   border-right: 4px solid var(--primaryColor);
   transition: var(--mainTransition);
@@ -50,11 +50,12 @@ const SideWrapper = styled.nav`
     display: block;
     font-size: 1.5rem;
     text-transform: capitalize;
-    color: var(--mainBlack);
+    color: var(--mainWhite);
     padding: 0.5rem 1.5rem;
     background: transparent;
     transition: var(--mainTransition);
   }
+  .sidebar-link.active,
   .sidebar-link:hover {
     background: var(--primaryColor);
     color: var(--mainWhite);
