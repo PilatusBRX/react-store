@@ -1,6 +1,6 @@
 import React from 'react';
 import CartItem from './CartItem';
-import { ProductConsumer } from '../../context';
+import { ProductConsumer } from '../../context/context';
 const CartList = () => {
   return (
     <div className='container-fluid'>
